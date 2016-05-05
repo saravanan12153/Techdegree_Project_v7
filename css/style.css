@@ -1,0 +1,345 @@
+/*========================
+GENERAL
+========================*/
+
+
+*,
+ *:before, 
+ *:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body{
+  max-width: 969px;
+  margin: 0 auto;
+  font-family: 'Lora', serif;
+}
+
+.wrapp {
+  width: 100%;
+  max-width: 969px;
+  margin: 0 auto;
+}
+
+/*========================
+HEADER
+========================*/
+
+.main-header {
+  width: 100%;
+  text-align: center;
+  background-color: #1E2D34;
+  font-style: italic;
+}
+
+.logo {
+  font-size: 30px;
+  display: inline-block;
+  padding: 30px; 
+  color: #fff;
+}
+
+.logo:hover,
+.main-footer:hover {
+  color: #C52408;
+}
+
+
+/*========================
+VIDEO CONTAINER
+========================*/
+
+.vidContainer{
+  margin: 0 auto;
+  position: relative;
+  width:100%;
+  left: 0;
+  top: 0;
+}
+
+#myVideo{
+  width: 100%;
+}
+
+
+#myVideo:-webkit-full-screen {
+  width: 100%;
+  height: 100%;
+}
+
+#myVideo:-moz-full-screen {
+  width: 100%;
+  height: 100%;
+}
+
+#myVideo:-ms-full-screen {
+  width: 100%;
+  height: 100%;
+}
+
+#myVideo:-o-full-screen {
+  width: 100%;
+  height: 100%;
+}
+
+
+
+
+
+/*========================
+BARS
+========================*/
+
+.progressBar {
+    position: relative;
+    width: 100%;
+    height: 5px;
+    background: #000;
+    bottom: 14px;
+    cursor: pointer;
+}
+
+.timeBar {
+    position: absolute;
+    z-index: 200;
+    width: 0;
+    height: 5px;
+    background-color: #C52408;
+    cursor: pointer;
+}
+
+.bufferBar {
+    position: absolute;
+    z-index: 200;
+    width: 0;
+    height: 5px;
+    background-color: #ccc;
+    cursor: pointer;
+}
+
+
+/*========================
+VIDEO CONTROLS
+========================*/
+
+
+.video-controls {
+  position: absolute;
+  background: none;
+  width: 100%;
+  margin: 0 auto;
+  bottom: 0;
+  left:0;
+  z-index: 2000;
+}
+
+
+
+/*========================
+BUTTONS
+========================*/
+
+
+button {
+  border: none;
+  background: none;
+  outline: none;
+}
+
+#playpausebuttons{
+  position: absolute;
+  bottom: 5px;
+  left: 2px;
+}
+
+
+#play {
+  width: 15px;
+  height: 15px;
+}
+
+#pause{
+  width: 15px;
+  height: 15px;
+  display: none;
+}
+
+
+#duration {
+  position: absolute;
+  left: 30px;
+  bottom: 10px;
+  color: #fff;
+  font-size: 12px;
+}
+
+.speed-container {
+  position: absolute;
+  border: 1px solid white;
+  bottom: 5px;
+  left: 120px;
+  font-size: 12px;
+  color: #fff;
+}
+
+
+.speed,
+#speedx1,
+#speedx3 {
+  display: inline-block;
+  padding: 0.4px;
+  cursor: pointer;
+}
+
+#volume{
+  display: none;
+}
+
+
+#mute {
+  position: absolute;
+  right: 70px;
+  bottom: 5px;
+}
+
+#muted {
+  width: 15px;
+  height: 15px;
+}
+
+#volume {
+  width: 15px;
+  height: 15px;
+}
+
+
+#volume-slider {
+    position: absolute;
+    width: 40px;
+    right: 30px;
+    bottom: 4px;
+    display: inline-block;
+}
+
+
+#fullScreen {
+  position: absolute;
+  right: 5px;
+  bottom: 8px;
+  width: 15px;
+  height: 15px;
+}
+
+
+
+/*========================
+TEXT CONTAINER
+========================*/
+
+
+#transcript {
+  max-width: 969px; 
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+  cursor: pointer;
+  margin-top: -3px;
+  font-family: 'Lora', serif;
+  color: #1E2D34;
+  background-color: #E2D0A0;
+  font-weight: 700;
+}
+
+
+
+p {
+  line-height: 20px;
+  padding: 20px;
+}
+
+
+
+
+/*========================
+FOOTER
+========================*/
+
+.main-footer {
+  text-align: center;
+  font-size: 18px;
+  background-color: #1E2D34;
+  color: #fff;
+  font-style: italic;
+}
+
+
+/*========================
+RESPONSIVE LAYOUT
+========================*/
+
+
+@media only screen and (min-width: 600px) {
+    .progressBar {
+    height: 11px;
+    bottom: 23px;
+  }
+
+  .timeBar {
+    position: absolute;
+    height: 11px;
+    
+  }
+
+  .bufferBar {
+    height: 11px;
+  }
+
+  #play,
+  #pause,
+  #fullScreen {
+    width: 22px;
+    height: 27px;
+  }
+  
+
+  
+  #duration {
+    left: 50px;
+    bottom: 12px;
+    color: #fff;
+    font-size: 20px;
+  }
+
+  .speed-container {
+    left: 200px;
+    bottom: 11px;
+    font-size: 12px;
+    font-size: 20px;
+    color: #fff;
+  }
+
+  #mute {
+    right: 97px;
+    bottom: 4px;
+  }
+
+  #muted {
+   width: 22px;
+   height: 27px;
+  }
+
+  #volume {
+    width: 22px;
+    height: 27px;
+  }
+
+  #volume-slider {
+    width: 60px;
+    bottom: 9px;
+    right: 35px;
+  }
+}
+
+

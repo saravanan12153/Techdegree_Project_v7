@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Interactive Video Player</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,700italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/ericmeyer.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+
+
+  
+    
+    <div class="wrapp">
+
+        <header class="main-header">
+          <h1 class="logo">Interactive Video Player</h1>
+        </header>
+
+
+         <div class="vidContainer"> 
+
+          <video id="myVideo">
+            <source src="video/video.mp4" type="video/mp4">
+            <source src="video/video.ogg" type="video/ogg">
+            <source src="video/video.webm" type="video/webM">
+            <p>
+              Your browser doesn't support HTML5 video.
+            </p>
+          </video>
+
+            <div class="video-controls"  data-state="hidden">
+
+                <div class="progressBar">
+                <div class="bufferBar"></div>
+                <div class="timeBar"></div>
+                </div>
+                    
+                    <div class="control-bar">
+                       <button  id="playpausebuttons">
+                          <img src="images/play-icon.png" alt="play" id="play">
+                          <img src="images/pause-icon.png" alt="pause" id="pause">
+                       </button> 
+
+                      <span id="duration">00:00 / 00:59</span>
+
+                      <div class="speed-container">
+                        <p class="speed">Speed</p>
+                        <div id="speedx1">x1</div>
+                        <div id="speedx3">x3</div>
+                      </div>
+                  
+                      <button id="mute">
+                        <img src="images/volume-off-icon.png" alt="volume" id="volume">  
+                        <img src="images/volume-on-icon.png" alt="mute" id="muted"> 
+                      </button>
+
+                      <input id="volume-slider" type="range" min="0" max="1" step="0.01" value="1">
+
+                       <button ><img src="images/fullscreen-icon.png" alt="fullscreen" id="fullScreen"></button>
+
+                    </div>
+                
+            </div>
+        </div>
+
+        <div id="transcript">
+            <p>
+            <span data-time = "00:00">Now that we've looked at the architecture of the internet, let's see how you might</span>
+            <span data-time = "00:04">connect your personal devices to the internet inside your house.</span>
+            <span data-time = "00:07">Well there are many ways to connect to the internet, and</span>
+            <span data-time = "00:11">most often people connect wirelessly.</span>
+            <span data-time = "00:13">Let's look at an example of how you can connect to the internet.</span>
+            <span data-time = "00:17">If you live in a city or a town, you probably have a coaxial cable for</span>
+            <span data-time = "00:22">cable Internet, or a phone line if you have DSL, running to the outside of</span>
+            <span data-time = "00:26">your house, that connects you to the Internet Service Provider, or ISP.</span>
+            <span data-time = "00:32">If you live far out in the country, you'll more likely have</span>
+            <span data-time = "00:34">a dish outside your house, connecting you wirelessly to your closest ISP, or</span>
+            <span data-time = "00:39">you might also use the telephone system.</span>
+            <span data-time = "00:42">Whether a wire comes straight from the ISP hookup outside your house, or</span>
+            <span data-time = "00:46">it travels over radio waves from your roof,</span>
+            <span data-time = "00:49">the first stop a wire will make once inside your house, is at your modem.</span>
+            <span data-time = "00:53">A modem is what connects the internet to your network at home.</span>
+            <span data-time = "00:57">A few common residential modems are DSL or</span>
+            </p>
+        </div>
+    
+    
+    
+         
+     </div>     
+           
+     <footer class="main-footer">
+        <p>&copy; 2016 Zoran Brbora</p>    
+     </footer>
+
+       <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+       <script src="js/interactive.js"></script>
+       
+              
+    
+  </body>
+</html>
+
+
+
+
+ 
