@@ -146,7 +146,7 @@ $(document).mousemove(function(e) {
 // PROGRESS BAR CONTROL
 
 var updatebar = function(x) {
-    var progress = $('.progressBar');
+    var progress = $progressBar;
     var maxduration = $video[0].duration; 
     var position = x - progress.offset().left; 
     var percentage = 100 * position / progress.width();
@@ -161,7 +161,7 @@ var updatebar = function(x) {
  
     // UPDATE FOR PROGRESS BAR AND VIDEO CURRENT TIME
     
-    $('.timeBar').css('width', percentage+'%');
+    $timeBar.css('width', percentage+'%');
     $video[0].currentTime = maxduration * percentage / 100;
 };
 
