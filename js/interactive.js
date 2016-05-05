@@ -175,7 +175,60 @@ var startBuffer = function() {
 setTimeout(startBuffer, 500);
 
 
+// SETUP FOR TEXT HIGHLIGHT
 
+
+function secondsFromTimespan(timeSpan) {
+    if(!timeSpan || !timeSpan.indexOf(':')) return 0;
+    var parts = timeSpan.split(':');
+    return +parts[0] * 60 + +parts[1];
+}
+
+function constructIntervals(transcripts) {
+    var intervals = [];
+    for(var i = 0; i < transcripts.length; i++) {
+        if(i == transcripts.length - 1) {
+            intervals.push({
+                lowerBound: secondsFromTimespan($(transcripts[i]).attr('data-time')),
+                upperBound: Math.floor($video[0].duration),
+                transcript: transcripts[i] 
+            });
+        } else {
+            intervals.push({
+                lowerBound: secondsFromTimespan($(transcripts[i]).attr('data-time')),
+                upperBound: secondsFromTimespan($(transcripts[i + 1]).attr('data-time')),
+                transcript: transcripts[i]
+            });
+        }
+
+    }
+    return intervals;
+}
+
+function isTimeWithinInterval(interval, currentTime) {
+    var lowerBoundSeconds = interval.lowerBound;
+    var upperBoundSeconds = interval.upperBound;
+    return lowerBoundSeconds <= currentTime && currentTime < upperBoundSeconds;
+}
+
+// HIGHLIGHT TEXT FROM A VIDEO
+
+
+$(function () {
+
+    var transcripts = $("span[data-time]");
+    var intervals = constructIntervals(transcripts);
+    $video[0].addEventListener('timeupdate', function () {
+
+        $('span[data-time]').removeClass('highlight');
+        for(var i = 0; i < intervals.length; i++) {
+            if(isTimeWithinInterval(intervals[i], $video[0].currentTime)) {
+                $(intervals[i].transcript).addClass('highlight');
+            }
+        }
+    });
+
+});
 
 
 
