@@ -70,6 +70,7 @@ $volumeSlider.on("change", function(){
 
 
 // FULLSCREEN BUTTON
+
 $fullscreen.on('click', function() {
 	if($.isFunction($video[0].webkitEnterFullscreen)) {
 		$video[0].webkitEnterFullscreen();
@@ -88,6 +89,7 @@ $fullscreen.on('click', function() {
 
 
 // SPEED VIDEO CONTROLS
+
 $speedx1.on('click', function() {
 	fastfowrd(this, 1); 
 });
@@ -101,7 +103,8 @@ var fastfowrd = function(obj, spd) {
 
 
 
-// Current time and duration
+// CURRENT TIME AND DURATION
+
 $video.on("timeupdate", function() {
   var $videoTime = $video[0].currentTime;
   if ($videoTime < 10) {
@@ -114,6 +117,7 @@ $video.on("timeupdate", function() {
 
  
 // PROGRESS BAR
+
 $video.on('timeupdate', function() {
    var currentPos = $video[0].currentTime; 
    var maxduration = $video[0].duration; 
@@ -140,6 +144,7 @@ $(document).mousemove(function(e) {
 
  
 // PROGRESS BAR CONTROL
+
 var updatebar = function(x) {
     var progress = $('.progressBar');
     var maxduration = $video[0].duration; 
@@ -154,14 +159,16 @@ var updatebar = function(x) {
         percentage = 0;
     }
  
-    //Update for progress bar and video current Time
+    // UPDATE FOR PROGRESS BAR AND VIDEO CURRENT TIME
+    
     $('.timeBar').css('width', percentage+'%');
     $video[0].currentTime = maxduration * percentage / 100;
 };
 
 
 
-//Buffer Bar
+// BUFFER BAR
+
 var startBuffer = function() {
     var maxduration = $video[0].duration;
     var currentBuffer = $video[0].buffered.end(0);
