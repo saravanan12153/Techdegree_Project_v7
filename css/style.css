@@ -252,7 +252,10 @@ TEXT CONTAINER
   font-weight: 700;
 }
 
-
+.highlight {
+  color: #C52408;
+  font-size: 20px;
+}
 
 p {
   line-height: 20px;
