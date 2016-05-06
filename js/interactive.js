@@ -224,7 +224,7 @@ $video.on("timeupdate", function() {
     } else if ($videoTime > 46.3 && $videoTime < 49.27) {
         triggerHighlight(46.3);
     } else if ($videoTime > 49.27 && $videoTime < 53.76) {
-        triggerHighlightaddHighlight(49.27);
+        triggerHighlight(49.27);
     } else if ($videoTime > 53.76 && $videoTime < 57.78 ) {
         triggerHighlight(53.76);
     } else if ($videoTime > 57.78) {
