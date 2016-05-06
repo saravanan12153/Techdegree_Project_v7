@@ -8,6 +8,7 @@ var $video = $('#myVideo'),
     $volumeSlider = $('#volume-slider'),
     $speedx1 = $('#speedx1'),
     $speedx3 = $('#speedx3'),
+    $rewind = $('#rewind'),
     $fullscreen = $('#fullScreen'),
     
 
@@ -98,7 +99,13 @@ $speedx3.on('click', function() {
 var fastfowrd = function(obj, spd) {
 	$video[0].playbackRate = spd;
 	$video[0].play();
-};	
+};
+
+//REWIND CONTROL BUTTON
+
+$rewind.on('click', function() {
+    fastfowrd(this, 0.5);
+});
 	
 
 
