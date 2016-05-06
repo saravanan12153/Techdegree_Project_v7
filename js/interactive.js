@@ -181,61 +181,52 @@ var startBuffer = function() {
 };
 setTimeout(startBuffer, 500);
 
+// HIGHLIGHT TEXT
 
-// SETUP FOR TEXT HIGHLIGHT
+$video.on("timeupdate", function() {
+  var $videoTime = $video[0].currentTime;
+    function triggerHighlight(h) {
+      $('span[data-start-time]').removeClass("highlight");
+      $('span[data-start-time="' + h + '"]').addClass("highlight");
+  }
 
-
-function secondsFromTimespan(timeSpan) {
-    if(!timeSpan || !timeSpan.indexOf(':')) return 0;
-    var parts = timeSpan.split(':');
-    return +parts[0] * 60 + +parts[1];
-}
-
-function constructIntervals(transcripts) {
-    var intervals = [];
-    for(var i = 0; i < transcripts.length; i++) {
-        if(i == transcripts.length - 1) {
-            intervals.push({
-                lowerBound: secondsFromTimespan($(transcripts[i]).attr('data-time')),
-                upperBound: Math.floor($video[0].duration),
-                transcript: transcripts[i] 
-            });
-        } else {
-            intervals.push({
-                lowerBound: secondsFromTimespan($(transcripts[i]).attr('data-time')),
-                upperBound: secondsFromTimespan($(transcripts[i + 1]).attr('data-time')),
-                transcript: transcripts[i]
-            });
-        }
-
+    if ($videoTime > -1 && $videoTime < 4.130) {
+       triggerHighlight(0);
+    } else if ($videoTime > 4.13 && $videoTime < 7.535) {
+       triggerHighlight(4.13);
+    } else if ($videoTime > 7.535 && $videoTime < 11.27) {
+      triggerHighlight(7.535);
+    } else if ($videoTime > 11.27 && $videoTime < 13.96) {
+        triggerHighlight(11.27);
+    } else if ($videoTime > 13.96 && $videoTime < 17.94) {
+        triggerHighlight(13.96);
+    } else if ($videoTime > 17.94 && $videoTime < 22.37) {
+        triggerHighlight(17.94);
+    } else if ($videoTime > 22.37 && $videoTime < 26.88) {
+        triggerHighlight(22.37);
+    } else if ($videoTime > 26.88 && $videoTime < 30.92) {
+        triggerHighlight(26.88);
+    } else if ($videoTime > 32.1 && $videoTime < 34.73) {
+        triggerHighlight(32.1);
+    } else if ($videoTime > 34.73 && $videoTime < 39.43) {
+        triggerHighlight(34.73 );
+    } else if ($videoTime > 39.43 && $videoTime < 41.19) {
+        triggerHighlight(39.43);
+    } else if ($videoTime > 42.35 && $videoTime < 46.3) {
+        triggerHighlight(42.35);
+    } else if ($videoTime > 46.3 && $videoTime < 49.27) {
+        triggerHighlight(46.3);
+    } else if ($videoTime > 49.27 && $videoTime < 53.76) {
+        triggerHighlightaddHighlight(49.27);
+    } else if ($videoTime > 53.76 && $videoTime < 57.78 ) {
+        triggerHighlight(53.76);
+    } else if ($videoTime > 57.78) {
+        triggerHighlight(57.78);
     }
-    return intervals;
-}
-
-function isTimeWithinInterval(interval, currentTime) {
-    var lowerBoundSeconds = interval.lowerBound;
-    var upperBoundSeconds = interval.upperBound;
-    return lowerBoundSeconds <= currentTime && currentTime < upperBoundSeconds;
-}
-
-// HIGHLIGHT TEXT FROM A VIDEO
-
-
-$(function () {
-
-    var transcripts = $("span[data-time]");
-    var intervals = constructIntervals(transcripts);
-    $video[0].addEventListener('timeupdate', function () {
-
-        $('span[data-time]').removeClass('highlight');
-        for(var i = 0; i < intervals.length; i++) {
-            if(isTimeWithinInterval(intervals[i], $video[0].currentTime)) {
-                $(intervals[i].transcript).addClass('highlight');
-            }
-        }
-    });
 
 });
+
+
 
 
 
