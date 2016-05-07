@@ -233,6 +233,13 @@ $video.on("timeupdate", function() {
 
 });
 
+// CLICKING ON SENTENCE TAKES YOU ON THAT PART IN THE VIDEO
+
+$("span").click(function() {
+  var transcriptTime = $(this).attr("data-start-time");
+  $video[0].currentTime = transcriptTime;
+});
+
 
 
 
