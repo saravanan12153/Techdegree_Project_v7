@@ -150,37 +150,37 @@ button {
 
 #playpausebuttons{
   position: absolute;
-  bottom: 5px;
-  left: 2px;
+  bottom: 7px;
+  left: 1px;
 }
 
 
 #play {
-  width: 15px;
-  height: 15px;
+  width: 10px;
+  height: 10px;
 }
 
 #pause{
-  width: 15px;
-  height: 15px;
+  width: 10px;
+  height: 10px;
   display: none;
 }
 
 
 #duration {
   position: absolute;
-  left: 30px;
-  bottom: 10px;
+  left: 20px;
+  bottom: 12px;
   color: #fff;
-  font-size: 12px;
+  font-size: 8px;
 }
 
 .speed-container {
   position: absolute;
   border: 1px solid white;
-  bottom: 5px;
-  left: 120px;
-  font-size: 12px;
+  bottom: 6px;
+  left: 78px;
+  font-size: 8px;
   color: #fff;
 }
 
@@ -190,47 +190,58 @@ button {
 #speedx3,
 #slowMo {
   display: inline-block;
-  padding: 0.4px;
+  padding: 0.1px;
   cursor: pointer;
-}
-
-#volume{
-  display: none;
 }
 
 
 #mute {
   position: absolute;
-  right: 70px;
-  bottom: 5px;
+  right: 60px;
+  bottom: 7.7px;
 }
 
 #muted {
-  width: 15px;
-  height: 15px;
+  width: 10px;
+  height: 10px;
 }
 
 #volume {
-  width: 15px;
-  height: 15px;
+  width: 10px;
+  height: 10px;
+  display: none;
 }
 
 
 #volume-slider {
     position: absolute;
     width: 40px;
-    right: 30px;
-    bottom: 4px;
+    right: 20px;
+    bottom: 12px;
     display: inline-block;
+    border-radius: 2px;
 }
 
+input[type='range'] {
+    -webkit-appearance: none !important;
+    background: #000;
+}
+
+input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    background: #FFF;
+    width: 5px;
+    height: 5px;
+    border-radius: 100%;
+    cursor:pointer;
+}
 
 #fullScreen {
   position: absolute;
   right: 5px;
-  bottom: 8px;
-  width: 15px;
-  height: 15px;
+  bottom: 10px;
+  width: 10px;
+  height: 11px;
 }
 
 
@@ -283,9 +294,79 @@ FOOTER
 RESPONSIVE LAYOUT
 ========================*/
 
+@media only screen and (min-width: 320px) {
+
+
+  #playpausebuttons{
+    bottom: 5px;
+    left: 2px;
+  }
+
+
+  #play {
+    width: 15px;
+    height: 15px;
+  }
+
+  #pause{
+    width: 15px;
+    height: 15px;
+  }
+
+
+  #duration {
+    left: 30px;
+    bottom: 10px;
+    font-size: 12px;
+  }
+
+  .speed-container {
+    bottom: 5px;
+    left: 120px;
+    font-size: 12px;
+  }
+
+  #mute {
+    right: 75px;
+    bottom: 5px;
+  }
+
+  #muted {
+    width: 15px;
+    height: 15px;
+  }
+
+  #volume {
+    width: 15px;
+    height: 15px;
+  }
+
+
+  #volume-slider {
+      width: 50px;
+      right: 25px;
+      bottom: 10px;
+      border-radius: 3px;
+  }
+
+  input[type='range']::-webkit-slider-thumb {
+    width: 8px;
+    height: 8px; 
+  }
+
+
+  #fullScreen {
+    right: 5px;
+    bottom: 8px;
+    width: 15px;
+    height: 15px;
+  }
+  
+}
+
 
 @media only screen and (min-width: 600px) {
-    .progressBar {
+  .progressBar {
     height: 11px;
     bottom: 23px;
   }
@@ -308,24 +389,20 @@ RESPONSIVE LAYOUT
   }
   
 
-  
   #duration {
     left: 50px;
     bottom: 12px;
-    color: #fff;
     font-size: 20px;
   }
 
   .speed-container {
     left: 200px;
     bottom: 11px;
-    font-size: 12px;
     font-size: 20px;
-    color: #fff;
   }
 
   #mute {
-    right: 97px;
+    right: 115px;
     bottom: 4px;
   }
 
@@ -340,9 +417,15 @@ RESPONSIVE LAYOUT
   }
 
   #volume-slider {
-    width: 60px;
+    width: 80px;
     bottom: 9px;
     right: 35px;
+    border-radius: 8px;
+  }
+
+  input[type='range']::-webkit-slider-thumb {
+    width: 20px;
+    height: 20px; 
   }
 }
 
