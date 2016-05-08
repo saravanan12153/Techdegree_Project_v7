@@ -22,15 +22,18 @@ var $video = $('#myVideo'),
 // HIDING AND SHOWING CONTROLS
 
 $vidContainer.mouseenter(function () {
-    $controlBar.fadeIn(350);
+    $controlBar.fadeIn(700);
 });
 $vidContainer.mouseleave(function () {
-    $controlBar.fadeOut(350);
+    $controlBar.fadeOut(700);
 });
 
 
 
 // PLAY / PAUSE CONTROL
+
+
+
 
 $playBtn.click(function () { 
   if ($video.get(0).paused){ 
@@ -90,22 +93,22 @@ $volumeSlider.on("change", function(){
 
 // FULLSCREEN BUTTON
 
-$fullscreen.on('click', function() {
-	if($.isFunction($video[0].webkitEnterFullscreen)) {
-		$video[0].webkitEnterFullscreen();
-	}	
-	else if ($.isFunction($video[0].mozRequestFullScreen)) {
-		$video[0].mozRequestFullScreen();
-	}
-	else if ($.isFunction($video[0].msRequestFullScreen)) {
-		$video[0].msRequestFullScreen();
-	}
-	else if ($.isFunction($video[0].oRequestFullScreen)) {
-		$video[0].oRequestFullScreen();
-	}
-});
+function fullScreen() {
+  if($video[0].requestFullscreen) {
+    $video[0].requestFullscreen();
+  } else if($video[0].mozRequestFullScreen) {
+    $video[0].mozRequestFullScreen();
+  } else if($video[0].webkitRequestFullscreen) {
+    $video[0].webkitRequestFullscreen();
+  } else if($video[0].msRequestFullscreen) {
+    $video[0].msRequestFullscreen();
+  }
+}
 
 
+$fullscreen.click(function() {
+  fullScreen();
+}); 
 
 // CURRENT TIME AND DURATION
 
