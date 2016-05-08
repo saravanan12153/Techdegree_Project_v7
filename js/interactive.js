@@ -44,6 +44,24 @@ $playBtn.click(function () {
     }
 });
 
+// SPEED VIDEO CONTROLS
+
+$speedx1.on('click', function() {
+	fastfowrd(this, 1); 
+});
+$speedx3.on('click', function() { 
+	fastfowrd(this, 3); });
+var fastfowrd = function(obj, spd) {
+	$video[0].playbackRate = spd;
+	$video[0].play();
+};
+
+//SLOW MOTION
+
+$slowMo.on('click', function() {
+    fastfowrd(this, 0.5);
+});
+
 
 // VOLUME CONTROLS
 
@@ -86,27 +104,6 @@ $fullscreen.on('click', function() {
 		$video[0].oRequestFullScreen();
 	}
 });
-
-
-
-// SPEED VIDEO CONTROLS
-
-$speedx1.on('click', function() {
-	fastfowrd(this, 1); 
-});
-$speedx3.on('click', function() { 
-	fastfowrd(this, 3); });
-var fastfowrd = function(obj, spd) {
-	$video[0].playbackRate = spd;
-	$video[0].play();
-};
-
-//SLOW MOTION
-
-$slowMo.on('click', function() {
-    fastfowrd(this, 0.5);
-});
-	
 
 
 
