@@ -39,10 +39,11 @@
                 </div>
                     
                     <div class="control-bar">
-                       <button  id="playpausebuttons">
-                          <img src="images/play-icon.png" alt="play" id="play">
-                          <img src="images/pause-icon.png" alt="pause" id="pause">
-                       </button> 
+                       
+                      <button type="button" id="playpausebuttons" data-state="play">
+                        <img src="images/play-icon.png" alt="play button" id="play">
+                        <img src="images/pause-icon.png" alt="pause button" id="pause">
+                      </button>
 
                       <span id="duration">00:00 / 00:59</span>
 
@@ -60,8 +61,9 @@
 
                       <input id="volume-slider" type="range" min="0" max="1" step="0.01" value="1">
 
-                       <button ><img src="images/fullscreen-icon.png" alt="fullscreen" id="fullScreen"></button>
-
+                      <button type="button" id="fullScreen" data-state="fullscreen">
+                        <img src="images/fullscreen-icon.png"  class="fullScreen" alt="fullscreen button">
+                      </button>
                     </div>
                 
             </div>
