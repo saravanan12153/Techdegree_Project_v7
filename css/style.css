@@ -97,7 +97,7 @@ BARS
     width: 100%;
     height: 5px;
     background: #000;
-    bottom: 14px;
+    bottom: 5px;
     cursor: pointer;
 }
 
@@ -132,7 +132,6 @@ VIDEO CONTROLS
   margin: 0 auto;
   bottom: 0;
   left:0;
-  z-index: 2000;
 }
 
 
@@ -177,7 +176,6 @@ button {
 
 .speed-container {
   position: absolute;
-  border: 1px solid white;
   bottom: 6px;
   left: 78px;
   font-size: 8px;
@@ -237,12 +235,24 @@ input[type='range']::-webkit-slider-thumb {
 }
 
 #fullScreen {
-  position: absolute;
-  right: 5px;
-  bottom: 10px;
-  width: 10px;
-  height: 11px;
+  float: right;
+  display: inline-block;
+  margin-bottom: 10px;
+  margin-left: 1px;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+
 }
+
+.fullScreen {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  bottom: 10px;
+  right: 4px;
+}
+
 
 
 
@@ -356,8 +366,11 @@ RESPONSIVE LAYOUT
 
 
   #fullScreen {
-    right: 5px;
-    bottom: 8px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .fullScreen {
     width: 15px;
     height: 15px;
   }
@@ -368,11 +381,10 @@ RESPONSIVE LAYOUT
 @media only screen and (min-width: 600px) {
   .progressBar {
     height: 11px;
-    bottom: 23px;
+    bottom: 15px;
   }
 
   .timeBar {
-    position: absolute;
     height: 11px;
     
   }
@@ -426,6 +438,11 @@ RESPONSIVE LAYOUT
   input[type='range']::-webkit-slider-thumb {
     width: 20px;
     height: 20px; 
+  }
+
+  .fullScreen {
+    width: 22px;
+    height: 27px;
   }
 }
 
