@@ -151,6 +151,7 @@ button {
   position: absolute;
   bottom: 7px;
   left: 1px;
+  cursor: pointer;
 }
 
 #pause {
@@ -174,6 +175,7 @@ button {
   bottom: 12px;
   color: #fff;
   font-size: 8px;
+  cursor: pointer;
 }
 
 .speed-container {
@@ -199,6 +201,7 @@ button {
   position: absolute;
   right: 60px;
   bottom: 7.7px;
+  cursor: pointer;
 }
 
 #volume {
@@ -223,6 +226,7 @@ button {
     bottom: 12px;
     display: inline-block;
     border-radius: 2px;
+    cursor: pointer;
 }
 
 input[type='range'] {
