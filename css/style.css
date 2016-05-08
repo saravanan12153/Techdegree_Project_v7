@@ -153,6 +153,9 @@ button {
   left: 1px;
 }
 
+#pause {
+  display: none;
+}
 
 #play {
   width: 10px;
@@ -162,7 +165,6 @@ button {
 #pause{
   width: 10px;
   height: 10px;
-  display: none;
 }
 
 
@@ -199,6 +201,10 @@ button {
   bottom: 7.7px;
 }
 
+#volume {
+  display: none;
+}
+
 #muted {
   width: 10px;
   height: 10px;
@@ -207,7 +213,6 @@ button {
 #volume {
   width: 10px;
   height: 10px;
-  display: none;
 }
 
 
